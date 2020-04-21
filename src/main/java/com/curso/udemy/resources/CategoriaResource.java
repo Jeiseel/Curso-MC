@@ -12,7 +12,7 @@ import com.curso.udemy.domain.Categoria;
 import com.curso.udemy.services.CategoriaService;
 
 @RestController
-@RequestMapping(value="/categorais")
+@RequestMapping(value="/categorias")
 public class CategoriaResource {
 	
 	@Autowired
