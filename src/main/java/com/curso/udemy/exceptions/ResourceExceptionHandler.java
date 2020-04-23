@@ -16,5 +16,12 @@ public class ResourceExceptionHandler {
 		StanderdError err = new StanderdError(HttpStatus.NOT_FOUND.value(), e.getMessage(), System.currentTimeMillis());
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);
 	}
+	
+	@ExceptionHandler(DataIntegrityException.class)
+	public ResponseEntity<StanderdError> dataIntegrity (DataIntegrityException e, HttpServletRequest request){
+		StanderdError err = new StanderdError(HttpStatus.BAD_REQUEST.value(), e.getMessage(), System.currentTimeMillis());
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);
+	}
+
 
 }

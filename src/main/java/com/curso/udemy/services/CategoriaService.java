@@ -3,9 +3,11 @@ package com.curso.udemy.services;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import com.curso.udemy.domain.Categoria;
+import com.curso.udemy.exceptions.DataIntegrityException;
 import com.curso.udemy.exceptions.ObjectNotFoundException;
 import com.curso.udemy.repositories.CategoriaRepository;
 
@@ -31,4 +33,24 @@ public class CategoriaService {
 		find(obj.getId());
 		return repository.save(obj);
 	}
+	
+	public void delete(Integer id) {
+		find(id);
+		try {
+			repository.deleteById(id);
+		}
+		catch (DataIntegrityViolationException e) {
+			throw new DataIntegrityException("Não é possivel excluir categoria que contém produtos!");
+			
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
