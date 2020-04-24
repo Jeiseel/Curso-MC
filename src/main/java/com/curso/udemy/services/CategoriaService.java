@@ -11,6 +11,7 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.curso.udemy.domain.Categoria;
+import com.curso.udemy.dto.CategoriaDTO;
 import com.curso.udemy.exceptions.DataIntegrityException;
 import com.curso.udemy.exceptions.ObjectNotFoundException;
 import com.curso.udemy.repositories.CategoriaRepository;
@@ -58,7 +59,10 @@ public class CategoriaService {
 		return repository.findAll(pageRequest);
 	}
 	
-	
+	//Metodo auxiliar que estancia um DTO
+	public Categoria fromDTO(CategoriaDTO objDTO) {
+		return new Categoria(objDTO.getId(), objDTO.getNome());
+	}
 	
 	
 	
