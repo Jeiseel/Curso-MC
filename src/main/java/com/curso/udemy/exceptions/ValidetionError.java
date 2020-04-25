@@ -20,6 +20,4 @@ public class ValidetionError extends StanderdError {
 		errors.add(new FieldMessage(fieldName, message));
 	}
 	
-	
-	
 }
