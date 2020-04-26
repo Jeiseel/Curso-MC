@@ -21,7 +21,7 @@ public class CategoriaService {
 	
 	@Autowired
 	private CategoriaRepository repository;
-
+	
 	
 	public Categoria find(Integer id) {
 		Optional<Categoria> obj = repository.findById(id);
