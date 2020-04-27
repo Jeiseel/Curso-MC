@@ -2,22 +2,47 @@ package com.curso.udemy.dto;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Length;
+
+import com.curso.udemy.validation.ClienteInsert;
+
+@ClienteInsert
 public class ClienteNewDTO  implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	//Dados Clientes
+	
+	@NotEmpty(message = "Campo com preenchimento obrigatorio!")
+	@Length(min = 5, max = 120, message = "O tamanho deve ter entre 5 e 120 caracteres!")
 	private String nome;
+	
+	@NotEmpty(message = "Campo com preenchimento obrigatorio!")
+	@Email(message = "Email invalido")
 	private String email;
+	
+	@NotEmpty(message = "Campo com preenchimento obrigatorio!")
 	private String cpfOuCnpj;
+	
 	private Integer tipo;
 	
 	//Dados Endereço
+	@NotEmpty(message = "Campo com preenchimento obrigatorio!")
 	private String logradouro;
+	
+	@NotEmpty(message = "Campo com preenchimento obrigatorio!")
 	private String numero;
+	
+	@NotEmpty(message = "Campo com preenchimento obrigatorio!")
 	private String complemento;
+	
 	private String bairro;
+	
+	@NotEmpty(message = "Campo com preenchimento obrigatorio!")
 	private String cep;
 	
+	@NotEmpty(message = "Campo com preenchimento obrigatorio!")
 	private String telefone1;
 	private String telefone2;
 	private String telefone3;
@@ -131,9 +156,5 @@ public class ClienteNewDTO  implements Serializable{
 	public void setCidadeId(Integer cidadeId) {
 		this.cidadeId = cidadeId;
 	} 
-	
-	
-	
-	
 	
 }
