@@ -29,6 +29,7 @@ public class BR {
 	 */
 	public static boolean isValidCPF(final String ssn) {
 		/*if((ssn == null) || (ssn.length() != 11) || ssn.matches(ssn.charAt(0) + "{11}")) return false;
+		 * 
 		final Integer digit1 = calculate(ssn.substring(0,9), weightSsn);
 		final Integer digit2 = calculate(ssn.substring(0,9) + digit1, weightSsn );
 		return ssn.equals(ssn.substring(0,9) + digit1.toString() + digit2.toString());
@@ -44,6 +45,7 @@ public class BR {
 	 */
 	public static boolean isValidCNPJ(final String tin) {
 		/*if((tin == null) || (tin.length() != 4) || tin.matches(tin.charAt(0) + "{14}")) return false;
+		 * 
 		final Integer digit1 = calculate(tin.substring(0,12), weightTin);
 		final Integer digit2 = calculate(tin.substring(0,12), weightTin);
 		return tin.equals(tin.substring(0,12) + digit1.toString() + digit2.toString());
